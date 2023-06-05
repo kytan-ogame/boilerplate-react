@@ -1,0 +1,3 @@
+# Project exclude paths
+/.storybook/main.js
+/.storybook/preview.js

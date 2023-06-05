@@ -1,10 +1,9 @@
-import { combineReducers } from '@reduxjs/toolkit';
-
+import { api } from '../../api';
 import global from './global/slice';
 
 export const getReducers = () => ({
   [global.name]: global.reducer,
+  [api.reducerPath]: api.reducer,
 });
-const reducers = combineReducers(getReducers());
 
-export default reducers;
+export default getReducers;

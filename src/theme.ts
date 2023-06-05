@@ -1,5 +1,5 @@
 import LinkBehavior from '@components/link-behavior';
-import { LinkProps } from '@mui/material/Link';
+import type { LinkProps } from '@mui/material/Link';
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({

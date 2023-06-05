@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import reducer from './modules';
-import { RootState } from './types';
+import { api } from '../api';
+import { getReducers } from './modules';
+import type { RootState } from './types';
 
 export function buildStore(preloadedState?: Partial<RootState>) {
   return configureStore({
-    reducer,
+    reducer: { ...getReducers() },
     preloadedState,
+    middleware: (getDefaultMiddleware) => {
+      return getDefaultMiddleware().concat(api.middleware);
+    },
   });
 }
 

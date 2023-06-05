@@ -1,8 +1,8 @@
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { StoryContext, StoryFn } from '@storybook/react';
 import { Provider } from 'react-redux';
 
-import { buildStore } from '../../src/redux/store';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { buildStore } from '@redux/store';
+import type { StoryContext, StoryFn } from '@storybook/react';
 
 const theme = createTheme({
   // Définissez ici votre thème Material-UI

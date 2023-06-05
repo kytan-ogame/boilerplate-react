@@ -4,8 +4,6 @@ import { Outlet } from 'react-router-dom';
 
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 
-import s from './layout.module.scss';
-
 interface Props {
   className?: string;
 }
@@ -14,17 +12,17 @@ const Layout = (props: Props) => {
   const { className } = props;
 
   return (
-    <div className={clsx(className, s.root)}>
+    <div className={clsx(className)}>
       <AppBar position="static">
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
-            <Button href="/">
+            <Button href="/" data-testid="nav-link-home">
               <Typography textAlign="center">Home page</Typography>
-            </Button>{' '}
-            <Button href="/contact">
+            </Button>
+            <Button href="/contact" data-testid="nav-link-contact">
               <Typography textAlign="center">Contact page</Typography>
             </Button>{' '}
-            <Button href="/not-found">
+            <Button href="/not-found" data-testid="nav-link-not-found">
               <Typography textAlign="center">Not found page</Typography>
             </Button>
           </Box>

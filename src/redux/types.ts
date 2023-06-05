@@ -1,7 +1,7 @@
-import { Reducer } from '@reduxjs/toolkit';
+import type { Reducer } from '@reduxjs/toolkit';
 
-import { getReducers } from './modules';
-import store from './store';
+import type { getReducers } from './modules';
+import type store from './store';
 
 type RootStateType<T extends Record<string, Reducer>> = {
   [P in keyof T]: ReturnType<T[P]>;

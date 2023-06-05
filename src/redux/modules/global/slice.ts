@@ -1,7 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import { RootState } from '../../types';
+import type { RootState } from '../../types';
 
 type Slice = {
   counter: number;
@@ -14,6 +14,9 @@ const slice = createSlice({
   name: 'global',
   initialState,
   reducers: {
+    setValue(state, { payload }: PayloadAction<number>) {
+      state.counter = payload;
+    },
     increment(state, { payload }: PayloadAction<number | undefined>) {
       state.counter += payload ?? 1;
     },

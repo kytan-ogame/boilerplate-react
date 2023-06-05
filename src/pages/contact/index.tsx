@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button, TextField, Typography } from '@mui/material';
 
-const ContactPage = () => {
+const Index = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Code de traitement du formulaire de contact
@@ -25,4 +25,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Index;

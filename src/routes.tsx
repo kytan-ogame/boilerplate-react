@@ -1,12 +1,11 @@
 import React, { lazy } from 'react';
-import { RouteObject } from 'react-router';
+import type { RouteObject } from 'react-router';
 
-import Loadable from '@components/loadable';
+import Layout from '@components/layout';
+import Loadable from '@components/loadable/loadable';
 
-import Layout from './components/layout';
-
-const HomePage = Loadable(lazy(() => import('@pages/home-page')));
-const ContactPage = Loadable(lazy(() => import('@pages/contact-page')));
+const HomePage = Loadable(lazy(() => import('@pages/home')));
+const ContactPage = Loadable(lazy(() => import('@pages/contact')));
 
 const routes: RouteObject[] = [
   {

@@ -32,6 +32,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     'import/no-named-as-default': 'off',
     'no-console': 'error',
@@ -42,6 +43,7 @@ module.exports = {
     'unicorn/prefer-query-selector': 'warn',
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/prefer-module': 'off',
+    'unicorn/prefer-spread': 'off',
   },
   settings: {
     jest: {

@@ -1,6 +1,6 @@
 import 'normalize.css';
 import React, { StrictMode } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -10,7 +10,16 @@ import App from './app';
 import store from './redux/store';
 import theme from './theme';
 
-render(
+if (process.env.USE_MOCK) {
+  const { worker } = await import('./mocks/browser');
+  worker.start();
+}
+
+const domNode = document.querySelector('#root');
+if (domNode === null) {
+  throw new Error(' Unable to get the root element for render React');
+}
+createRoot(domNode).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -19,6 +28,5 @@ render(
         </ThemeProvider>
       </BrowserRouter>
     </Provider>
-  </StrictMode>,
-  document.querySelector('#root')
+  </StrictMode>
 );

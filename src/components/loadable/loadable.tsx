@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 
 import { jsx } from '@emotion/react';
 
-import SuspenseLoader from './suspense-loader';
+import SuspenseLoader from '../suspense-loader/suspense-loader';
 
 import IntrinsicAttributes = jsx.JSX.IntrinsicAttributes;
 

@@ -2,15 +2,32 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@features/*": ["features/*"],
-      "@pages/*": ["pages/*"],
-      "@redux/*": ["redux/*"],
-      "@styles/*": ["styles/*"]
+      "@components/*": [
+        "components/*"
+      ],
+      "@features/*": [
+        "features/*"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@redux/*": [
+        "redux/*"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@test-utils/*": [
+        "test-utils/*"
+      ]
     },
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "checkJs": false,
     "jsx": "react-jsx",
@@ -21,7 +38,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": ["node", "jest", "@testing-library/jest-dom"]
+    "types": [
+      "node",
+      "jest",
+      "@types/jest",
+      "@testing-library/jest-dom"
+    ]
   },
-  "include": ["./src/**/*"]
+  "include": [
+    "./src/**/*"
+  ]
 }

@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import LinkBehavior from '@components/link-behavior';
 import { LinkProps } from '@mui/material/Link';
-import LinkBehavior from './components/LinkBehavior';
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {

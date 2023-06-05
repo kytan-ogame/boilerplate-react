@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { Button, Typography } from '@mui/material';
-import { globalActions, globalSelectors } from '../redux/modules/global/slice';
+import { globalActions, globalSelectors } from '@redux/modules/global/slice';
 
 const HomePage = () => {
   const counter = useSelector(globalSelectors.getCounter);

@@ -1,7 +1,9 @@
 import { defineFeature, loadFeature } from 'jest-cucumber';
-import { fireEvent, render, screen } from '@testing-library/react';
-import meta, { Default as HomePageStory } from '../stories/HomePage.stories';
+
 import { composeStory } from '@storybook/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
+import meta, { Default as HomePageStory } from '../stories/home-page.stories';
 
 const feature = loadFeature('./HomePage.feature', { loadRelativePath: true });
 

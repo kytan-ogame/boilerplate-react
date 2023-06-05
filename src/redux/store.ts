@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import reducer from './modules';
 import { RootState } from './types';
 

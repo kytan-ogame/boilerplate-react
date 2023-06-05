@@ -1,4 +1,5 @@
 import { Reducer } from '@reduxjs/toolkit';
+
 import { getReducers } from './modules';
 import store from './store';
 

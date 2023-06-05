@@ -1,11 +1,8 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2021,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
   },
   extends: [
     'eslint:recommended',
@@ -15,21 +12,36 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:storybook/recommended',
+    'plugin:unicorn/recommended',
   ],
-  plugins: ['react', '@typescript-eslint', 'eslint-plugin-no-inline-styles'],
-  rules: {
-    'react/prop-types': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'react/display-name': 'off',
-    'no-console': 'error',
+  ignorePatterns: ['config/**', '**/*.css', '**/*.scss'],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2021,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'eslint-plugin-no-inline-styles',
+    'import',
+  ],
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    'import/no-named-as-default': 'off',
+    'no-console': 'error',
+    'react/display-name': 'off',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'unicorn/consistent-function-scoping': 'off',
+    'unicorn/prefer-query-selector': 'warn',
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/prefer-module': 'off',
   },
   settings: {
     jest: {
@@ -38,6 +50,8 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      typescript: {},
+    },
   },
-  ignorePatterns: ['config/**', '**/*.css', '**/*.scss'],
 };

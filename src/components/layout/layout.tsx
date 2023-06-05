@@ -1,7 +1,8 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import clsx from 'clsx';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 
 import s from './layout.module.scss';
 

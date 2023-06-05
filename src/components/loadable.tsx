@@ -1,7 +1,10 @@
 import React, { Suspense } from 'react';
+
 import { jsx } from '@emotion/react';
+
+import SuspenseLoader from './suspense-loader';
+
 import IntrinsicAttributes = jsx.JSX.IntrinsicAttributes;
-import SuspenseLoader from './SuspenseLoader';
 
 const Loadable =
   <T extends IntrinsicAttributes>(Component: React.FC<T>) =>

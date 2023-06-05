@@ -1,3 +1,16 @@
-# Project exclude paths
-/.storybook/main.js
-/.storybook/preview.js
+/node_modules
+/dist/*
+**/coverage/*
+**/bdd-coverage/*
+/.storybook/*
+.idea/
+.vscode/
+.DS_Store
+.temp_cache
+junit.xml
+bdd-junit.xml
+.cache
+.npmrc
+.pnpm-debug.log
+.pnpm-store
+.env

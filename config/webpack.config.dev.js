@@ -5,18 +5,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 require('dotenv').config({ path: '.env' });
 
-console.log('webpack.config.dev -  >> process.env.PORT', process.env.PORT);
-
 module.exports = {
   mode: 'development',
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '..', 'dist'),
     filename: 'bundle.js',
     publicPath: '/',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '@components': path.resolve(__dirname, '..', 'src/components'),
+      '@features': path.resolve(__dirname, '..', 'src/features'),
+      '@pages': path.resolve(__dirname, '..', 'src/pages'),
+      '@redux': path.resolve(__dirname, '..', 'src/redux'),
+      '@styles': path.resolve(__dirname, '..', 'src/styles'),
+    },
   },
   module: {
     rules: [
@@ -29,6 +34,39 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.module\.s(a|c)ss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -39,10 +77,12 @@ module.exports = {
       'process.env': JSON.stringify(process.env),
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
   ],
   devServer: {
+    open: true,
     port: process.env.PORT || 3000,
     historyApiFallback: true,
   },

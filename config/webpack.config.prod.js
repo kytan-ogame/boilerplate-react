@@ -25,6 +25,32 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+      {
+        test: /\.module\.s(a|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+      {
+        test: /\.s(a|c)ss$/,
+        exclude: /\.module.(s(a|c)ss)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -40,7 +66,8 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
     }),
     new CleanWebpackPlugin(),
   ],

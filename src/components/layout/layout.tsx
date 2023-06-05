@@ -1,10 +1,19 @@
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import clsx from 'clsx';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 
-export default () => {
+import s from './layout.module.scss';
+
+interface Props {
+  className?: string;
+}
+
+const Layout = (props: Props) => {
+  const { className } = props;
+
   return (
-    <div>
+    <div className={clsx(className, s.root)}>
       <AppBar position="static">
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
@@ -15,7 +24,7 @@ export default () => {
               <Typography textAlign="center">Contact page</Typography>
             </Button>{' '}
             <Button href="/not-found">
-              <Typography textAlign="center">NOt found page</Typography>
+              <Typography textAlign="center">Not found page</Typography>
             </Button>
           </Box>
         </Toolbar>
@@ -27,3 +36,5 @@ export default () => {
     </div>
   );
 };
+
+export default Layout;

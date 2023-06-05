@@ -14,6 +14,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'plugin:storybook/recommended',
   ],
   plugins: ['react', '@typescript-eslint', 'eslint-plugin-no-inline-styles'],
   rules: {
@@ -38,4 +39,5 @@ module.exports = {
       version: 'detect',
     },
   },
+  ignorePatterns: ['config/**', '**/*.css', '**/*.scss'],
 };

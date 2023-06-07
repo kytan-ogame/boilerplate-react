@@ -22,6 +22,7 @@ module.exports = {
       '@redux': path.resolve(__dirname, '..', 'src/redux'),
       '@styles': path.resolve(__dirname, '..', 'src/styles'),
       '@test-utils': path.resolve(__dirname, '..', 'src/test-utils'),
+      '@mocks': path.resolve(__dirname, '..', 'src/mocks'),
     },
   },
   module: {

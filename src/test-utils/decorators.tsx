@@ -4,11 +4,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { buildStore } from '@redux/store';
 import type { StoryContext, StoryFn } from '@storybook/react';
 
+export { mswDecorator as WithMockedData } from 'msw-storybook-addon';
+
 const theme = createTheme({
   // Définissez ici votre thème Material-UI
 });
 
-export function withThemeProvider(Component: StoryFn) {
+export function WithThemeProvider(Component: StoryFn) {
   return (
     <ThemeProvider theme={theme}>
       <Component />
@@ -16,7 +18,7 @@ export function withThemeProvider(Component: StoryFn) {
   );
 }
 
-export function withRedux(Component: StoryFn, context: StoryContext) {
+export function WithRedux(Component: StoryFn, context: StoryContext) {
   return (
     <Provider store={buildStore(context.parameters.redux || {})}>
       <Component />

@@ -2,7 +2,11 @@ import React from 'react';
 
 import { composeStory } from '@storybook/react';
 import type { Meta, StoryFn } from '@storybook/react';
-import { render } from '@testing-library/react';
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 
 import type { Step } from './index';
 
@@ -33,5 +37,7 @@ export const theUserIsOnThePage = (given: Step, stories: unknown) => {
       },
     });
     render(<ComposedStoryPage />);
+
+    await waitForElementToBeRemoved(screen.getByTestId('jest-loading-wrapper'));
   });
 };

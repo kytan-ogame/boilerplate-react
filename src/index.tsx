@@ -12,7 +12,11 @@ import theme from './theme';
 
 if (process.env.USE_MOCK) {
   const { worker } = await import('./mocks/browser');
-  worker.start();
+  worker.start({
+    serviceWorker: {
+      url: '/mock-service-worker.js',
+    },
+  });
 }
 
 const domNode = document.querySelector('#root');

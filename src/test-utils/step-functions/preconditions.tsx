@@ -37,7 +37,5 @@ export const theUserIsOnThePage = (given: Step, stories: unknown) => {
       },
     });
     render(<ComposedStoryPage />);
-
-    await waitForElementToBeRemoved(screen.getByTestId('jest-loading-wrapper'));
   });
 };

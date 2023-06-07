@@ -7,7 +7,7 @@
     "build": "webpack --config webpack.config.prod.js --mode production",
     "test": "jest",
     "lint": "BABEL_ENV='test' eslint ./src --ext .js,.jsx,.ts,.tsx --cache --cache-location .cache/eslintcache --cache-strategy content",
-    "bdd": "pnpm run test --config=jest.config.bdd.js --passWithNoTests",
+    "bdd": "pnpm run test --config=jest.config.bdd.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

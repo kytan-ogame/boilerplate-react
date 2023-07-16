@@ -44,7 +44,7 @@ specifiers:
   eslint-plugin-react: ^7.32.2
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-storybook: ^0.6.12
-  eslint-plugin-unicorn: ^47.0.0
+  eslint-plugin-unicorn: ^48.0.0
   file-loader: ^6.2.0
   html-webpack-plugin: ^5.5.1
   husky: ^8.0.3
@@ -134,7 +134,7 @@ devDependencies:
   eslint-plugin-react: 7.32.2_eslint@8.41.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.41.0
   eslint-plugin-storybook: 0.6.12_7ploys55nlrvgzaet23aqtwjea
-  eslint-plugin-unicorn: 47.0.0_eslint@8.41.0
+  eslint-plugin-unicorn: 48.0.0_eslint@8.41.0
   file-loader: 6.2.0_webpack@5.85.0
   html-webpack-plugin: 5.5.1_webpack@5.85.0
   husky: 8.0.3
@@ -540,6 +540,11 @@ packages:
   /@babel/helper-validator-identifier/7.19.1:
     resolution: {integrity: sha512-awrNfaMtnHUr653GgGEs++LlAvW6w+DcPrOliSMXWCKo597CwL5Acf/wWdNkf/tfEQE3mjkeD1YOVZOUV/od1w==}
     engines: {node: '>=6.9.0'}
+
+  /@babel/helper-validator-identifier/7.22.5:
+    resolution: {integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==}
+    engines: {node: '>=6.9.0'}
+    dev: true
 
   /@babel/helper-validator-option/7.21.0:
     resolution: {integrity: sha512-rmL/B8/f0mKS2baE9ZpyTcTavvEuWhTTW8amjzXNvYG4AwBsqTLikfXsEofsJEfKHf+HQVQbFOHy6o+4cnC/fQ==}
@@ -8464,13 +8469,13 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-unicorn/47.0.0_eslint@8.41.0:
-    resolution: {integrity: sha512-ivB3bKk7fDIeWOUmmMm9o3Ax9zbMz1Bsza/R2qm46ufw4T6VBFBaJIR1uN3pCKSmSXm8/9Nri8V+iUut1NhQGA==}
+  /eslint-plugin-unicorn/48.0.0_eslint@8.41.0:
+    resolution: {integrity: sha512-8fk/v3p1ro34JSVDBEmtOq6EEQRpMR0iTir79q69KnXFZ6DJyPkT3RAi+ZoTqhQMdDSpGh8BGR68ne1sP5cnAA==}
     engines: {node: '>=16'}
     peerDependencies:
-      eslint: '>=8.38.0'
+      eslint: '>=8.44.0'
     dependencies:
-      '@babel/helper-validator-identifier': 7.19.1
+      '@babel/helper-validator-identifier': 7.22.5
       '@eslint-community/eslint-utils': 4.4.0_eslint@8.41.0
       ci-info: 3.8.0
       clean-regexp: 1.0.0
@@ -8484,8 +8489,7 @@ packages:
       read-pkg-up: 7.0.1
       regexp-tree: 0.1.27
       regjsparser: 0.10.0
-      safe-regex: 2.1.1
-      semver: 7.5.1
+      semver: 7.5.4
       strip-indent: 3.0.0
     dev: true
 
@@ -14099,12 +14103,6 @@ packages:
       ret: 0.1.15
     dev: true
 
-  /safe-regex/2.1.1:
-    resolution: {integrity: sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A==}
-    dependencies:
-      regexp-tree: 0.1.27
-    dev: true
-
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
@@ -14245,6 +14243,14 @@ packages:
 
   /semver/7.5.1:
     resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
+  /semver/7.5.4:
+    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:

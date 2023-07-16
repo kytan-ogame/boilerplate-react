@@ -32,7 +32,7 @@ specifiers:
   '@typescript-eslint/parser': ^5.59.8
   babel-loader: ^9.1.2
   clean-webpack-plugin: ^4.0.0
-  clsx: ^1.2.1
+  clsx: ^2.0.0
   css-loader: ^6.8.1
   dotenv: ^16.1.3
   eslint: ^8.41.0
@@ -85,7 +85,7 @@ dependencies:
   '@emotion/styled': 11.11.0_efnsujvwehy5in7hodous2swsa
   '@mui/material': 5.13.3_dt65rpbqxfgmlvwbpcy2icm2oq
   '@reduxjs/toolkit': 1.9.5_mdrgh7pftervsmldwkouzrv5ry
-  clsx: 1.2.1
+  clsx: 2.0.0
   dotenv: 16.1.3
   i18next: 23.2.0
   normalize.css: 8.0.1
@@ -7193,6 +7193,11 @@ packages:
 
   /clsx/1.2.1:
     resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
+
+  /clsx/2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
     dev: false
 

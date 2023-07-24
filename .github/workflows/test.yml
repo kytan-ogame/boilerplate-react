@@ -13,31 +13,8 @@ permissions:
   contents: read
 
 jobs:
-  lint:
-    name: lint
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: pnpm/action-setup@v2
-      with:
-        version: 7.30.0
-    - uses: actions/setup-node@v3
-      with:
-        node-version-file: '.nvmrc'
-        cache: 'pnpm'
-    - uses: actions/cache@v3
-      id: cache-node_modules
-      with:
-        path: node_modules
-        key: ubuntu-latest-18-${{ hashFiles('**/pnpm-lock.json') }}
-        restore-keys: |
-          ubuntu-latest-18-${{ hashFiles('**/pnpm-lock.json') }}
-    - if: steps.cache-node_modules.outputs.cache-hit != 'true'
-      run: pnpm install
-    - run: pnpm run lint
-
-  test:
-    name: test
+  install_dependencies:
+    name: install_dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -48,36 +25,25 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'pnpm'
-      - uses: actions/cache@v3
-        id: cache-node_modules
-        with:
-          path: node_modules
-          key: ubuntu-latest-18-${{ hashFiles('**/pnpm-lock.json') }}
-          restore-keys: |
-            ubuntu-latest-18-${{ hashFiles('**/pnpm-lock.json') }}
-      - if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: pnpm install
+
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+    steps:
+      - run: pnpm run lint
+
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+    steps:
       - run: pnpm run test
 
   bdd:
     name: bdd
     runs-on: ubuntu-latest
+    needs: install_dependencies
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7.30.0
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'pnpm'
-      - uses: actions/cache@v3
-        id: cache-node_modules
-        with:
-          path: node_modules
-          key: ubuntu-latest-18-${{ hashFiles('**/pnpm-lock.json') }}
-          restore-keys: |
-            ubuntu-latest-18-${{ hashFiles('**/pnpm-lock.json') }}
-      - if: steps.cache-node_modules.outputs.cache-hit != 'true'
-        run: pnpm install
       - run: pnpm run bdd

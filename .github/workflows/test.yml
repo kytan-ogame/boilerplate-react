@@ -52,8 +52,6 @@ jobs:
         with:
           path: node_modules
           key: node_modules-${{ hashFiles('**/pnpm-lock.json') }}
-          restore-keys: |
-            node_modules-${{ hashFiles('**/pnpm-lock.json') }}
       - run: pnpm run lint
 
   test:
@@ -74,8 +72,6 @@ jobs:
         with:
           path: node_modules
           key: node_modules-${{ hashFiles('**/pnpm-lock.json') }}
-          restore-keys: |
-            node_modules-${{ hashFiles('**/pnpm-lock.json') }}
       - run: pnpm run test
 
   bdd:
@@ -96,6 +92,4 @@ jobs:
         with:
           path: node_modules
           key: node_modules-${{ hashFiles('**/pnpm-lock.json') }}
-          restore-keys: |
-            node_modules-${{ hashFiles('**/pnpm-lock.json') }}
       - run: pnpm run bdd

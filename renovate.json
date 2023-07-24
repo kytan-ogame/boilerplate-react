@@ -6,5 +6,11 @@
   "branchPrefix": "renovate/",
   "respectLatest": true,
   "semanticCommits": "enabled",
-  "separateMajorMinor": true
+  "separateMajorMinor": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "<=18"
+    }
+  ]
 }

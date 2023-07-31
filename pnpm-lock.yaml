@@ -33,8 +33,8 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0
   react-i18next:
-    specifier: 13.0.2
-    version: 13.0.2(i18next@23.3.0)(react-dom@18.2.0)(react@18.2.0)
+    specifier: 13.0.3
+    version: 13.0.3(i18next@23.3.0)(react-dom@18.2.0)(react@18.2.0)
   react-redux:
     specifier: 8.1.1
     version: 8.1.1(@types/react-dom@18.2.7)(@types/react@18.2.17)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
@@ -12880,8 +12880,8 @@ packages:
       react-is: 18.1.0
     dev: true
 
-  /react-i18next@13.0.2(i18next@23.3.0)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-NEVxC32v0oR4egwYM0QM0WE93AiJG5r0NTXTL8mhQfAhsMfDS2fSO6jpluyfsfypP988KzUQrAXncspcJ7+GHA==}
+  /react-i18next@13.0.3(i18next@23.3.0)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-/t4kt4Y2o+21hbvx+o9zpVnmoiud7KLDncyZFGN0U6TGAWYaXdTsp/ytAHFcKKSAODg4noIMaOO3X7bMgCqLHw==}
     peerDependencies:
       i18next: '>= 23.2.3'
       react: '>= 16.8.0'

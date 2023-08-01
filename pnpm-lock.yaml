@@ -24,8 +24,8 @@ dependencies:
     specifier: 16.3.1
     version: 16.3.1
   i18next:
-    specifier: 23.3.0
-    version: 23.3.0
+    specifier: 23.4.1
+    version: 23.4.1
   normalize.css:
     specifier: 8.0.1
     version: 8.0.1
@@ -34,7 +34,7 @@ dependencies:
     version: 18.2.0
   react-i18next:
     specifier: 13.0.3
-    version: 13.0.3(i18next@23.3.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 13.0.3(i18next@23.4.1)(react-dom@18.2.0)(react@18.2.0)
   react-redux:
     specifier: 8.1.2
     version: 8.1.2(@types/react-dom@18.2.7)(@types/react@18.2.18)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
@@ -9113,8 +9113,8 @@ packages:
     hasBin: true
     dev: true
 
-  /i18next@23.3.0:
-    resolution: {integrity: sha512-xd/UzWT71zYudCT7qVn6tB4yUVuXAhgCorsowYgM2EOdc14WqQBp5P2wEsxgfiDgdLN5XwJvTbzxrMfoY/nxnw==}
+  /i18next@23.4.1:
+    resolution: {integrity: sha512-07ekE7hbUrbxTYj97VnBzyhKcGURTJC9p4iWTwCVC8t63T+YrgqQmb/n1LBQMivZYwR61pqS+PC0G2rtENycyQ==}
     dependencies:
       '@babel/runtime': 7.22.6
     dev: false
@@ -12880,7 +12880,7 @@ packages:
       react-is: 18.1.0
     dev: true
 
-  /react-i18next@13.0.3(i18next@23.3.0)(react-dom@18.2.0)(react@18.2.0):
+  /react-i18next@13.0.3(i18next@23.4.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-/t4kt4Y2o+21hbvx+o9zpVnmoiud7KLDncyZFGN0U6TGAWYaXdTsp/ytAHFcKKSAODg4noIMaOO3X7bMgCqLHw==}
     peerDependencies:
       i18next: '>= 23.2.3'
@@ -12895,7 +12895,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.6
       html-parse-stringify: 3.0.1
-      i18next: 23.3.0
+      i18next: 23.4.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false

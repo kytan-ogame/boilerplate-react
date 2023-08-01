@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack serve --config config/webpack.config.dev.js --mode development",
     "build": "webpack --config webpack.config.prod.js --mode production",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "lint": "BABEL_ENV='test' eslint ./src --ext .js,.jsx,.ts,.tsx --cache --cache-location .cache/eslintcache --cache-strategy content",
     "bdd": "pnpm run test --config=jest.config.bdd.js",
     "storybook": "storybook dev -p 6006",

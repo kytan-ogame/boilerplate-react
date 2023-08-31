@@ -49,24 +49,27 @@ export const theSectionHasTextContent = (then: Step) => {
 export const inputHasValue = (when: Step) => {
   when(
     /^the input with (name|label|testId) "(.*)" has the value "(.*)"$/,
-    (type: 'name' | 'label' | 'testId', str: string, value: string) => {
-      let input: Element;
+    async (type: 'name' | 'label' | 'testId', str: string, value: string) => {
+      let input: Element | null;
 
       switch (type) {
         case 'name': {
-          input = document.querySelector(`[name="${str}"]`) as Element;
+          input = document.querySelector(`[name="${str}"]`);
           expect(input).not.toBeNull();
           break;
         }
         case 'label': {
-          input = screen.getByLabelText(str);
+          input = screen.queryByLabelText(str);
           break;
         }
         default: {
-          input = screen.getByTestId(str);
+          input = screen.queryByTestId(str);
           break;
         }
       }
+      await waitFor(() => {
+        expect(input).not.toBeNull();
+      });
       expect(input).toHaveValue(value);
     }
   );

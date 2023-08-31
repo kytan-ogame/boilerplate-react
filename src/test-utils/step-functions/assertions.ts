@@ -3,6 +3,27 @@ import { screen, waitFor, within } from '@testing-library/react';
 
 import type { Step } from './index';
 
+const getInput = (type: string, str: string): Element | null => {
+  let input: Element | null;
+
+  switch (type) {
+    case 'name': {
+      input = document.querySelector(`[name="${str}"]`);
+      expect(input).not.toBeNull();
+      break;
+    }
+    case 'label': {
+      input = screen.queryByLabelText(str);
+      break;
+    }
+    default: {
+      input = screen.queryByTestId(str);
+      break;
+    }
+  }
+  return input;
+};
+
 export const currentLocationIsX = (when: Step) =>
   when(/^the location path is "(.+)"$/, async (pathname: string) => {
     await waitFor(() => {
@@ -50,27 +71,11 @@ export const inputHasValue = (when: Step) => {
   when(
     /^the input with (name|label|testId) "(.*)" has the value "(.*)"$/,
     async (type: 'name' | 'label' | 'testId', str: string, value: string) => {
-      let input: Element | null;
-
-      switch (type) {
-        case 'name': {
-          input = document.querySelector(`[name="${str}"]`);
-          expect(input).not.toBeNull();
-          break;
-        }
-        case 'label': {
-          input = screen.queryByLabelText(str);
-          break;
-        }
-        default: {
-          input = screen.queryByTestId(str);
-          break;
-        }
-      }
       await waitFor(() => {
+        const input = getInput(type, str);
         expect(input).not.toBeNull();
+        expect(input as Element).toHaveValue(value);
       });
-      expect(input).toHaveValue(value);
     }
   );
 };

@@ -17,8 +17,8 @@ module.exports = {
   coverageDirectory: '<rootDir>/coverage',
   resolver: `<rootDir>/config/jest.resolver.js`,
   collectCoverageFrom: [
-    '**/*.{ts,tsx}',
+    'src/**/*.{ts,tsx}',
     '!**/*.stories.{ts,tsx}',
-    '!index.tsx',
+    '!src/**/index.tsx',
   ],
 };

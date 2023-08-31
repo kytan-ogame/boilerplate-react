@@ -19,6 +19,6 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!**/*.stories.{ts,tsx}',
-    '!src/**/index.tsx',
+    '!src/index.tsx',
   ],
 };

@@ -1,6 +1,23 @@
+import { getCurrentLocation } from '@test-utils/render-with-provider';
 import { screen, waitFor, within } from '@testing-library/react';
 
 import type { Step } from './index';
+
+export const currentLocationIsX = (when: Step) =>
+  when(/^the location path is "(.+)"$/, async (pathname: string) => {
+    await waitFor(() => {
+      const location = getCurrentLocation();
+      expect(location!.pathname).toBe(pathname);
+    });
+  });
+
+export const currentSearchIsX = (when: Step) =>
+  when(/^the location search is "(.+)"$/, async (search: string) => {
+    await waitFor(() => {
+      const location = getCurrentLocation();
+      expect(location!.search).toBe(search);
+    });
+  });
 
 export const theUserShouldSeeAnErrorMessageInTheSection = (then: Step) =>
   then(
@@ -26,6 +43,31 @@ export const theSectionHasTextContent = (then: Step) => {
       await waitFor(() => {
         expect(screen.getByTestId(testId)).toHaveTextContent(content);
       });
+    }
+  );
+};
+export const inputHasValue = (when: Step) => {
+  when(
+    /^the input with (name|label|testId) "(.*)" has the value "(.*)"$/,
+    (type: 'name' | 'label' | 'testId', str: string, value: string) => {
+      let input: Element;
+
+      switch (type) {
+        case 'name': {
+          input = document.querySelector(`[name="${str}"]`) as Element;
+          expect(input).not.toBeNull();
+          break;
+        }
+        case 'label': {
+          input = screen.getByLabelText(str);
+          break;
+        }
+        default: {
+          input = screen.getByTestId(str);
+          break;
+        }
+      }
+      expect(input).toHaveValue(value);
     }
   );
 };

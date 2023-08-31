@@ -1,7 +1,6 @@
+import type { RootState } from '@redux/store';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
-
-import type { RootState } from '../../types';
 
 type Slice = {
   counter: number;

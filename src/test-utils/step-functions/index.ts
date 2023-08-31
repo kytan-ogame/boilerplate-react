@@ -6,13 +6,10 @@ import * as preconditions from './preconditions';
 
 export type Step = DefineStepFunction;
 
-export const commonStepsDefinition =
-  (stories: unknown): StepDefinitions =>
-  ({ defineStep }) => {
-    for (const action of Object.values(actions)) action(defineStep);
-    for (const assertion of Object.values(assertions)) assertion(defineStep);
-    for (const precondition of Object.values(preconditions))
-      stories && precondition(defineStep, stories);
-  };
+export const commonStepsDefinition: StepDefinitions = ({ then }) => {
+  for (const action of Object.values(actions)) action(then);
+  for (const assertion of Object.values(assertions)) assertion(then);
+  for (const precondition of Object.values(preconditions)) precondition(then);
+};
 
 export default commonStepsDefinition;

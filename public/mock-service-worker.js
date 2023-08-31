@@ -1,5 +1,9 @@
+// eslint-disable-next-line unicorn/no-abusive-eslint-disable,unicorn/no-abusive-eslint-disable,unicorn/no-abusive-eslint-disable
+/* eslint-disable */
+/* tslint:disable */
+
 /**
- * Mock Service Worker (1.2.1).
+ * Mock Service Worker (1.2.3).
  * @see https://github.com/mswjs/msw
  * - Please do NOT modify this file.
  * - Please do NOT serve this file on production.
@@ -114,7 +118,6 @@ self.addEventListener('fetch', function (event) {
   event.respondWith(
     handleRequest(event, requestId).catch((error) => {
       if (error.name === 'NetworkError') {
-        // eslint-disable-next-line no-console
         console.warn(
           '[MSW] Successfully emulated a network error for the "%s %s" request.',
           request.method,
@@ -124,7 +127,6 @@ self.addEventListener('fetch', function (event) {
       }
 
       // At this point, any exception indicates an issue with the original request/response.
-      // eslint-disable-next-line no-console
       console.error(
         `\
 [MSW] Caught an exception from the "%s %s" request (%s). This is probably not a problem with Mock Service Worker. There is likely an additional logging output above.`,
@@ -155,9 +157,7 @@ async function handleRequest(event, requestId) {
           status: clonedResponse.status,
           statusText: clonedResponse.statusText,
           body:
-            clonedResponse.body === null
-              ? undefined
-              : await clonedResponse.text(),
+            clonedResponse.body === null ? null : await clonedResponse.text(),
           headers: Object.fromEntries(clonedResponse.headers.entries()),
           redirected: clonedResponse.redirected,
         },
@@ -280,7 +280,6 @@ function sendToClient(client, message) {
   return new Promise((resolve, reject) => {
     const channel = new MessageChannel();
 
-    // eslint-disable-next-line unicorn/prefer-add-event-listener
     channel.port1.onmessage = (event) => {
       if (event.data && event.data.error) {
         return reject(event.data.error);

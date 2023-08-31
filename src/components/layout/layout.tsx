@@ -12,7 +12,7 @@ const Layout = (props: Props) => {
   const { className } = props;
 
   return (
-    <div className={clsx(className)}>
+    <div className={clsx(className)} data-testid="app-main-layout">
       <AppBar position="static">
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>

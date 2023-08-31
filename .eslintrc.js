@@ -11,7 +11,6 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:storybook/recommended',
     'plugin:unicorn/recommended',
   ],
   ignorePatterns: ['config/**', '**/*.css', '**/*.scss'],
@@ -44,6 +43,7 @@ module.exports = {
     'unicorn/prevent-abbreviations': 'off',
     'unicorn/prefer-module': 'off',
     'unicorn/prefer-spread': 'off',
+    'unicorn/no-null': 'off',
   },
   settings: {
     jest: {

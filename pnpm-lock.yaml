@@ -212,8 +212,8 @@ devDependencies:
     specifier: 4.15.1
     version: 4.15.1(webpack-cli@5.1.4)(webpack@5.88.2)
   whatwg-fetch:
-    specifier: 3.6.18
-    version: 3.6.18
+    specifier: 3.6.19
+    version: 3.6.19
 
 packages:
 
@@ -12491,8 +12491,8 @@ packages:
       iconv-lite: 0.6.3
     dev: true
 
-  /whatwg-fetch@3.6.18:
-    resolution: {integrity: sha512-ltN7j66EneWn5TFDO4L9inYC1D+Czsxlrw2SalgjMmEMkLfA5SIZxEFdE6QtHFiiM6Q7WL32c7AkI3w6yxM84Q==}
+  /whatwg-fetch@3.6.19:
+    resolution: {integrity: sha512-d67JP4dHSbm2TrpFj8AbO8DnL1JXL5J9u0Kq2xW6d0TFDbCA3Muhdt8orXC22utleTVj7Prqt82baN6RBvnEgw==}
     dev: true
 
   /whatwg-mimetype@2.3.0:
